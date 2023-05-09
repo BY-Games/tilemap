@@ -56,7 +56,12 @@ public class TargetMover: MonoBehaviour {
     private void MakeOneStepTowardsTheTarget() {
         Vector3Int startNode = tilemap.WorldToCell(transform.position);
         Vector3Int endNode = targetInGrid;
-        List<Vector3Int> shortestPath = BFS.GetPath(tilemapGraph, startNode, endNode, maxIterations);
+
+
+        // List<Vector3Int> shortestPath = BFS.GetPath(tilemapGraph, startNode, endNode, maxIterations);
+
+        //A Star algorithm to find the shortestPath
+        List<Vector3Int> shortestPath = AStar.FindPath(tilemapGraph, startNode, endNode, tilemap);
         Debug.Log("shortestPath = " + string.Join(" , ",shortestPath));
         if (shortestPath.Count >= 2) { // shortestPath contains both source and target.
             Vector3Int nextNode = shortestPath[1];
