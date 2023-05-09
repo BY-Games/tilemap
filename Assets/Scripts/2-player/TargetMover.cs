@@ -62,7 +62,7 @@ public class TargetMover: MonoBehaviour {
 
         //A Star algorithm to find the shortestPath
         List<Vector3Int> shortestPath = AStar.FindPath(tilemapGraph, startNode, endNode, tilemap);
-        Debug.Log("shortestPath = " + string.Join(" , ",shortestPath));
+      //  Debug.Log("shortestPath = " + string.Join(" , ",shortestPath));
         if (shortestPath.Count >= 2) { // shortestPath contains both source and target.
             Vector3Int nextNode = shortestPath[1];
             transform.position = tilemap.GetCellCenterWorld(nextNode);

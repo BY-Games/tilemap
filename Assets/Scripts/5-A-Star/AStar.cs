@@ -52,16 +52,17 @@ public class AStar
      */
     public static float Cost(string tile)
     {
-        float cost = 1f; // default cost for grass tiles
 
+        float cost = 1f; // default cost for grass tiles
+        Debug.Log("the tile is :" + tile);
         if (tile == "bushes")
         {
-
             cost = 2f; // bush tiles are slower than grass tiles hill tiles
         }
-        else if (tile == "hill")
+        else if (tile == "hills")
         {
-            cost = 3f; // hill tiles are slower than hill tiles
+
+            cost = 3f; // hill tiles are slower than bushes tiles
         }
 
 
@@ -76,7 +77,7 @@ public class AStar
         Tilemap tileMap
     )
     {
-        
+
 
         // Create a priority queue to hold nodes and their distance from the start node
         var distanceQueue = new PriorityQueue<Vector3Int>();
@@ -102,9 +103,14 @@ public class AStar
             // Check each neighbor of the current node to find the best path to the target
             foreach (var neighbor in graph.Neighbors(current.Item1))
             {
+               
+                
+
                 // Calculate the cost of moving from the current node to this neighbor.
                 float G = costSoFar[current.Item1] + Cost(tileMap.GetTile(neighbor).name);
 
+                // If the neighbor has not yet been visited or the newly calculated cost to reach it is lower than the previously calculated cost,
+                // update the cost to reach the neighbor and add it to the queue with its new cost as priority.
                 if (!costSoFar.ContainsKey(neighbor) || G < costSoFar[neighbor])
                 {
                     costSoFar[neighbor] = G;
