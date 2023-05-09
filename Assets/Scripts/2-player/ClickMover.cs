@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.U2D.Path.GUIFramework;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 /**
@@ -12,7 +9,7 @@ public class ClickMover: TargetMover {
 
     [SerializeField] InputAction moveAction;
 
-    void OnValidate() {
+    private void OnValidate() {
         // Provide default bindings for the input actions.
         // Based on answer by DMGregory: https://gamedev.stackexchange.com/a/205345/18261
         if (moveAction == null)
