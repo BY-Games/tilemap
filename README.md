@@ -3,6 +3,9 @@
 This project is an additional improvement for the game found at
 [pathfinding tilemap](https://github.com/gamedev-at-ariel/05-tilemap-pathfinding)
 
+# Try our additional improvement
+1. [Minor changes](https://by-games.itch.io/tilemap-game)
+2. [Algorithm](https://by-games.itch.io/tilemap-game-astar)
 
 # About the game:
 The game is a 2D world represented by a tile graph. Each tile can be one of the following terrain types:
@@ -51,3 +54,4 @@ The method then enters a while loop that continues until the priority queue is e
 For each neighbor, the method calculates the cost of moving from the current node to the neighbor using the Cost() method. If the neighbor has not yet been visited or the newly calculated cost to reach it is lower than the previously calculated cost, the method updates the cost to reach the neighbor and adds it to the queue with its new cost as priority.
 
 If the target node is not found, the method returns an empty list. If the target node is found, the method creates a list of vectors representing the path from the start node to the end node and returns it.
+
