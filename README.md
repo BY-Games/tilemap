@@ -38,6 +38,10 @@ The player will have the ability to sail in sea.
 ### Pick Axe
 The player will be able to turn mountains into grass.
 
+In [KeyboardMoverByTile.cs](Assets%2FScripts%2F2-player%2FKeyboardMoverByTile.cs), we have added an OnTrigger method to detect interactions between the player and the items. This is handled using a switch case.
+When the player picks up an item, it will be adjusted in [AllowedTiles.cs](Assets%2FScripts%2F1-tiles%2FAllowedTiles.cs) for each item, to be allowed with the special tiles associated with that item.
+For the pickaxe, each allowed tile for mountain climbing will be changed to grass using SetTile().
+
 
 
 # Algorithm 
