@@ -25,6 +25,21 @@ The player is allowed to walk on the following terrain types:
 * Hills
 * Swamp
 
+
+# Minor Changes
+We have added three new features: a goat, a boat, and a pickaxe. As the player travels through the map, they will encounter these features, which will change their interactions with the environment.
+
+### Goat
+The player will have the ability to climb mountains.
+
+### Boat
+The player will have the ability to sail in sea.
+
+### Pick Axe
+The player will be able to turn mountains into grass.
+
+
+
 # Algorithm 
 
 Instead of using the BFS algorithm to find the shortest path, we implemented the A* algorithm to find the shortest path with weights.
