@@ -6,6 +6,7 @@ This project is an additional improvement for the game found at
 # Try our additional improvement
 1. [Minor changes](https://by-games.itch.io/tilemap-game)
 2. [Algorithm](https://by-games.itch.io/tilemap-game-astar)
+3. [ML-Agent](https://by-games.itch.io/chasing-and-catching-agent-in-2d-tilemap)
 
 # About the game:
 The game is a 2D world represented by a tile graph. Each tile can be one of the following terrain types:
