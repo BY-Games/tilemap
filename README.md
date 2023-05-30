@@ -26,6 +26,28 @@ The player is allowed to walk on the following terrain types:
 * Swamp
 
 
+# Chasing and Catching Agent in 2D Tilemap
+This project implements an agent that learns to chase and catch another object within a 2D tilemap environment.
+The agent's goal is to capture the target object by moving towards it.
+
+## Environment Setup
+The agent and target object are spawned in random positions within the tilemap at the beginning of each episode. The tilemap consists of different types of tiles, and not all tiles are suitable for both the agent and the target object to be on.
+
+Demo can be found in scene "ML-Agent" and can be tested in Unity.
+
+## Training the Agent
+The agent is trained using the Unity Machine Learning Agents (ML-Agents) framework.
+
+During training, the agent learns to navigate the tilemap and catch the target object by optimizing its behavior through trial and error. The agent receives rewards or penalties based on its actions and their consequences, allowing it to learn the optimal strategy for capturing the target object.
+To ensure that the agent and target object are placed on valid tiles, the environment uses a position generation function that checks if the generated position is on an allowed tile for both entities. If the generated position is not suitable, a new position is generated until a valid one is found.
+
+You can refer to [ChaseThePlayerAgent.cs](Assets%2FScripts%2FML-Agent%2FChaseThePlayerAgent.cs) script for more details on the implementation.
+## Model
+The trained agent's model has been exported to the ONNX format and saved as [ChaseThePlayer.onnx](Assets%2FModels%2FChaseThePlayer.onnx).
+
+To use the ONNX model, you will need to have the necessary libraries or frameworks installed that support loading and running ONNX models.
+See more information about requirements and installations at [ml-agents](https://github.com/Unity-Technologies/ml-agents).
+
 # Minor Changes
 We have added three new features: a goat, a boat, and a pickaxe. As the player travels through the map, they will encounter these features, which will change their interactions with the environment.
 

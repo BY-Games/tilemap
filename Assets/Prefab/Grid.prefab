@@ -186,7 +186,6 @@ MonoBehaviour:
   tilemap: {fileID: 6796339270637824088}
   allowedTiles: {fileID: 6796339269531522071}
   speed: 2
-  maxIterations: 1000
   targetInWorld: {x: 0, y: 0, z: 0}
   targetInGrid: {x: 0, y: 0, z: 0}
   targetObject: {fileID: 6796339270241442563}
@@ -253,6 +252,7 @@ GameObject:
   - component: {fileID: 6796339270241442562}
   - component: {fileID: 6796339270241442566}
   - component: {fileID: 6796339270241442561}
+  - component: {fileID: 8211975812407367205}
   - component: {fileID: 6796339270241442564}
   m_Layer: 0
   m_Name: Player
@@ -375,6 +375,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8211975812407367205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796339270241442573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b66181536e4477479fa38aaadfc15e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 6796339270637824088}
+  allowedTiles: {fileID: 6796339269531522071}
+  speed: 10
+  targetInWorld: {x: 0, y: 0, z: 0}
+  targetInGrid: {x: 0, y: 0, z: 0}
+  moveAction:
+    m_Name: Move
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: d2f3c9fb-6470-4e60-a218-1fdbfc41977d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: de53b636-7abf-4478-ad2b-79bc74c3ff31
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 0
+    m_Flags: 0
 --- !u!114 &6796339270241442564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +613,7 @@ MonoBehaviour:
   loseMaterial: {fileID: 2100000, guid: 4cc600184f8b0964e8dca424bd84477c, type: 2}
   trainingState: {fileID: 3641424474691565133}
   targetTransform: {fileID: 6796339270241442563}
+  stepDelay: 0.5
 --- !u!114 &6796339270395532227
 MonoBehaviour:
   m_ObjectHideFlags: 0

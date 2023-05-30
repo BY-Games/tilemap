@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
+using Unity.MLAgents.Policies;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -90,7 +91,39 @@ public class ChaseThePlayerAgent : Agent {
         continousActions[1] = Input.GetAxisRaw("Vertical");
     }
 
+    [SerializeField] private float stepDelay = 0.5f; // Adjust the delay time as needed
+
+    private float timeSinceLastStep = 0f;
+    private bool isInferenceOnly = false;
+
+    private void Start() {
+        // Retrieve the BehaviorParameters component attached to the agent
+        var behaviorParameters = GetComponent<BehaviorParameters>();
+        if (behaviorParameters != null) {
+            // Check the value of the "Inference Only" option
+            isInferenceOnly = behaviorParameters.BehaviorType == BehaviorType.InferenceOnly;
+        }
+    }
+
     public override void OnActionReceived(ActionBuffers actions) {
+        if (!isInferenceOnly) {
+            PerformMovement(actions);
+        }
+        else // Perform movement with short delay in "Inference Only" mode for visual and playing comfort.
+        {
+            timeSinceLastStep += Time.deltaTime;
+
+            if (timeSinceLastStep >= stepDelay) {
+                // Perform movement after the delay time has passed
+                PerformMovement(actions);
+
+                // Reset the time counter
+                timeSinceLastStep = 0f;
+            }
+        }
+    }
+
+    private void PerformMovement(ActionBuffers actions) {
         // Because the tile is set to be 0.5 length tiles, the movement will be by tiles.
         // positive/negative action received will be +-y/x movement, 0 will stay at place. 
         var horizontal = 0f;
@@ -115,7 +148,6 @@ public class ChaseThePlayerAgent : Agent {
             SetReward(-1f);
             EndEpisode();
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
