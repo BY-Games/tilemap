@@ -45,6 +45,9 @@ You can refer to [ChaseThePlayerAgent.cs](Assets%2FScripts%2FML-Agent%2FChaseThe
 ## Model
 The trained agent's model has been exported to the ONNX format and saved as [ChaseThePlayer.onnx](Assets%2FModels%2FChaseThePlayer.onnx).
 
+![Stats.png](Stats.png)
+
+
 To use the ONNX model, you will need to have the necessary libraries or frameworks installed that support loading and running ONNX models.
 See more information about requirements and installations at [ml-agents](https://github.com/Unity-Technologies/ml-agents).
 
