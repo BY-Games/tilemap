@@ -1,0 +1,29 @@
+{
+    "ChaseThePlayer": {
+        "checkpoints": [
+            {
+                "steps": 82665,
+                "file_path": "results\\testrnd\\ChaseThePlayer\\ChaseThePlayer-82665.onnx",
+                "reward": 0.0,
+                "creation_time": 1685445916.3020864,
+                "auxillary_file_paths": [
+                    "results\\testrnd\\ChaseThePlayer\\ChaseThePlayer-82665.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 82665,
+            "file_path": "results\\testrnd\\ChaseThePlayer.onnx",
+            "reward": 0.0,
+            "creation_time": 1685445916.3020864,
+            "auxillary_file_paths": [
+                "results\\testrnd\\ChaseThePlayer\\ChaseThePlayer-82665.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.0+cpu"
+    }
+}

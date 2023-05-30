@@ -13,8 +13,8 @@ public class TargetMover: MonoBehaviour {
     [Tooltip("The speed by which the object moves towards the target, in meters (=grid units) per second")]
     [SerializeField] float speed = 2f;
 
-    [Tooltip("Maximum number of iterations before BFS algorithm gives up on finding a path")]
-    [SerializeField] int maxIterations = 1000;
+    // [Tooltip("Maximum number of iterations before BFS algorithm gives up on finding a path")]
+    // [SerializeField] int maxIterations = 1000;
 
     [Tooltip("The target position in world coordinates")]
     [SerializeField] Vector3 targetInWorld;

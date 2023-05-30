@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
@@ -48,6 +49,10 @@ public class AllowedTiles : MonoBehaviour
 
         // default check of other allowed tiles.
         return allowedTiles.Contains(tile);
+    }
+
+    public bool CanBeSpawnHere(TileBase tile) {
+        return (Contain(tile) && !CanGoOnMountain(tile));
     }
 
     public TileBase[] Get()

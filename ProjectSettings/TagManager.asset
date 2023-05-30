@@ -7,6 +7,7 @@ TagManager:
   - Goat
   - Boat
   - Pick
+  - Bounds
   layers:
   - Default
   - TransparentFX
